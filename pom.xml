@@ -21,6 +21,7 @@
     <spring.version>5.2.3.RELEASE</spring.version>
     <mysql-connector-java.version>8.0.19</mysql-connector-java.version>
     <jstl.version>1.2</jstl.version>
+    <servlet-api.version>2.5</servlet-api.version>
   </properties>
 
   <dependencies>
@@ -49,6 +50,11 @@
       <groupId>javax.servlet</groupId>
       <artifactId>jstl</artifactId>
       <version>${jstl.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>${servlet-api.version}</version>
     </dependency>
   </dependencies>
 
