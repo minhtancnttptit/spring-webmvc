@@ -1,5 +1,6 @@
 package com.minhtanit;
 
+import com.minhtanit.service.AddService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,12 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 public class AddController {
     @RequestMapping("/add")
-    public ModelAndView add(HttpServletRequest request, HttpServletResponse response) {
-        int num1 = Integer.parseInt(request.getParameter("t1"));
-        int num2 = Integer.parseInt(request.getParameter("t2"));
-        int result = num1 + num2;
+    public ModelAndView add(@RequestParam("t1") int t1, @RequestParam("t2") int t2) {
+        AddService addService = new AddService();
+        int result = addService.add(t1, t2);
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("display.jsp");
+        modelAndView.setViewName("display");
         modelAndView.addObject("result", result);
         return modelAndView;
     }
